@@ -179,12 +179,13 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.user.get_username',
     'example.app.pipeline.require_email',
     'social.pipeline.mail.mail_validation',
+    'social.pipeline.social_auth.associate_by_email',
     'social.pipeline.user.create_user',
     'social.pipeline.social_auth.associate_user',
     'social.pipeline.debug.debug',
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details',
-    'social.pipeline.debug.debug'
+    'social.pipeline.debug.debug',
 )
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
@@ -199,7 +200,8 @@ except ImportError:
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = '5618522'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = 'QaEBvN2GbCRdHdSr1PhU'
-SOCIAL_AUTH_VK_APP_USER_MODE = ['email']
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['email', 'groups']
+
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '413629303380-bmkjgoesma17348chttgv3uf8p1k12o9.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '_DFPu4WdsMZZnfZKhz84rxM7'
@@ -218,16 +220,7 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 
 SOCIAL_AUTH_TWITTER_KEY = 'dQemFi4fKcnUauKqrkKOyb4oL'
 SOCIAL_AUTH_TWITTER_SECRET = 'RSJmTueWBzCgeK9reZ0ViE0sZXKMgi5pgiQoUfcLVCWkCM8vWU'
-# SOCIAL_AUTH_TWITTER_SCOPE = ['email']
 
-SOCIAL_AUTH_YANDEX_OAUTH2_KEY = 'dQemFi4fKcnUauKqrkKOyb4oL'
-SOCIAL_AUTH_YANDEX_OAUTH2_SECRET = 'RSJmTueWBzCgeK9reZ0ViE0sZXKMgi5pgiQoUfcLVCWkCM8vWU'
-SOCIAL_AUTH_YANDEX_OAUTH2_AUTHORIZATION_URL = 'https://api-yaru.yandex.ru/me/'
-
-YANDEX_OAUTH2_CLIENT_KEY = '04d32f775cc04084b4c63ba53c763bcd'
-YANDEX_OAUTH2_CLIENT_SECRET = 'e5ac5dfe29334e27988cd319dff02f19'
-
-
-# YANDEX_OAUTH2_CLIENT_KEY = '04d32f775cc04084b4c63ba53c763bcd'
-# YANDEX_OAUTH2_CLIENT_SECRET = 'e5ac5dfe29334e27988cd319dff02f19'
-# YANDEX_OAUTH2_API_URL = 'https://api-yaru.yandex.ru/me/'
+# https://oauth.yandex.com/
+SOCIAL_AUTH_YANDEX_OAUTH2_KEY = '04d32f775cc04084b4c63ba53c763bcd'
+SOCIAL_AUTH_YANDEX_OAUTH2_SECRET = 'e98b0cc1a8c444f1859830753f42194a'
